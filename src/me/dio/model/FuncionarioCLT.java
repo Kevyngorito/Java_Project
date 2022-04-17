@@ -1,18 +1,18 @@
-package me.dio;
+package me.dio.model;
 /* Utiliza-se o abstract para travar a classe APENAS para HERENÇA */
 public abstract class FuncionarioCLT {
     //atributos
     //protected para que as classes filhas tenham acessos aos atributos abaixo
     protected String nome;
     protected String documento;
-    protected String ValorSalrio;
-    protected String Endereco; // <<< composição
+    protected Double ValorSalario;
+    protected Endereco endereco; // <<< composição
 
-    public FuncionarioCLT(String nome, String documento, String valorSalrio, String endereco) {
+    public FuncionarioCLT(String nome, String documento, Double valorSalario, Endereco endereco) {
         this.nome = nome;
         this.documento = documento;
-        ValorSalrio = valorSalrio;
-        Endereco = endereco;
+        this.ValorSalario = valorSalario;
+        this.endereco = endereco;
     }
 
     public FuncionarioCLT() {
@@ -34,20 +34,20 @@ public abstract class FuncionarioCLT {
         this.documento = documento;
     }
 
-    public String getValorSalrio() {
-        return ValorSalrio;
+    public Double getValorSalario() {
+        return ValorSalario;
     }
 
-    public void setValorSalrio(String valorSalrio) {
-        ValorSalrio = valorSalrio;
+    public void setValorSalario(Double valorSalario) {
+        this.ValorSalario = valorSalario;
     }
 
-    public String getEndereco() {
-        return Endereco;
+    public Endereco getEndereco() {
+        return endereco;
     }
 
-    public void setEndereco(String endereco) {
-        Endereco = endereco;
+    public void setEndereco(Endereco endereco) {
+       this.endereco = endereco;
     }
 
     @Override
@@ -55,8 +55,8 @@ public abstract class FuncionarioCLT {
         return "FuncionarioCLT{" +
                 "nome='" + nome + '\'' +
                 ", documento='" + documento + '\'' +
-                ", ValorSalrio='" + ValorSalrio + '\'' +
-                ", Endereco='" + Endereco + '\'' +
+                ", ValorSalrio='" + ValorSalario + '\'' +
+                ", Endereco='" + endereco + '\'' +
                 '}';
     }
 }
